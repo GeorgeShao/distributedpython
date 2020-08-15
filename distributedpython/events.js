@@ -10,7 +10,7 @@ async function main() {
     return colour;
 }
 
-//# sourceMappingURL=transpile_temp.js.map
+
 )
 
   job.on('accepted',

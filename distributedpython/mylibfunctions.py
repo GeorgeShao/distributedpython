@@ -14,6 +14,7 @@ def run(payload, function):
 
 	transpile_js_file = open("./distributedpython/transpile_temp.js", "r")
 	transpile_js_file_text = transpile_js_file.read()
+	transpile_js_file_text = transpile_js_file_text.replace("//# sourceMappingURL=transpile_temp.js.map","")
 	function = transpile_js_file_text
 
 	transpile_js_file.close()
