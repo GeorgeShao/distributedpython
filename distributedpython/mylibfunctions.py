@@ -23,7 +23,8 @@ def run(payload, function):
 
 	while True:
 		output = process.stdout.readline()
-		print(output.strip())
+		if output.strip() != "":
+			print(output.strip())
 		# Do something else
 		return_code = process.poll()
 		if return_code is not None:
