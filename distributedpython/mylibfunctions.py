@@ -2,19 +2,19 @@ import subprocess
 import os
 
 def run(payload, function):
-	transpile_py_file = open("transpile_temp.py", "w")
-	transpile_py_file.write(payload)
-
-	try:
-		os.system('python -m metapensiero.pj transpile_temp.py')
-	except Exception as e:
-		print("Exception:", e)
+	transpile_py_file = open("./distributedpython/transpile_temp.py", "w")
+	transpile_py_file.write(function)
 
 	transpile_py_file.close()
 
-	transpile_js_file = open("transpile_temp.js", "r")
+	try:
+		os.system('python -m metapensiero.pj ./distributedpython/transpile_temp.py')
+	except Exception as e:
+		print("Exception:", e)
+
+	transpile_js_file = open("./distributedpython/transpile_temp.js", "r")
 	transpile_js_file_text = transpile_js_file.read()
-	payload = transpile_js_file_text
+	function = transpile_js_file_text
 
 	transpile_js_file.close()
 

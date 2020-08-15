@@ -5,11 +5,7 @@ async function main() {
   let job, startTime
 
   job = compute.for(["red", "orange", "yellow", "green", "blue", "purple"], 
-    function(colour){
-        console.log(colour)
-        progress()
-        return colour
-    }
+//# sourceMappingURL=transpile_temp.js.map
 )
 
   job.on('accepted',
