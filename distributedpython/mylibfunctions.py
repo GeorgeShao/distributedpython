@@ -10,18 +10,18 @@ def run(payload, function):
 	except Exception as e:
 		print("Exception:", e)
 
-	placeholder_js_file.close()
+	transpile_py_file.close()
 
 	transpile_js_file = open("transpile_temp.js", "r")
 	transpile_js_file_text = transpile_js_file.read()
 	payload = transpile_js_file_text
 
-	placeholder_js_file.close()
+	transpile_js_file.close()
 
 	placeholder_js_file = open("./distributedpython/placeholder_events.js", "r")
 	example_js_file = open("./distributedpython/example_events.js", "r")
 	main_js_file = open("./distributedpython/events.js", "w")
-	
+
 	placeholder_js_text = placeholder_js_file.read()
 	placeholder_js_text = placeholder_js_text.replace("[PAYLOAD]", payload)
 	placeholder_js_text = placeholder_js_text.replace("{FUNCTION}", function)
