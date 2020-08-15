@@ -1,1 +1,1 @@
-{"version": 3, "mappings": "", "sources": [], "names": [], "sourcesContent": []}
+{"version": 3, "mappings": "AACA;eACI,CAAMA,MAAN;IACAC,QAAA;IACA,OAAOD;AAHX", "sources": ["transpile_temp.py"], "names": ["colour", "progress"], "sourcesContent": ["\ndef myfunction(colour):\n    print(colour)\n    progress()\n    return colour\n"]}

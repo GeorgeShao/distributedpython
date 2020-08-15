@@ -4,7 +4,12 @@ async function main() {
 
   let job, startTime
 
-  job = compute.for(["red", "orange", "yellow", "green", "blue", "purple"], 
+  job = compute.for(["red", "orange", "yellow", "green", "blue", "purple"], function myfunction(colour) {
+    console.log(colour);
+    progress();
+    return colour;
+}
+
 //# sourceMappingURL=transpile_temp.js.map
 )
 
