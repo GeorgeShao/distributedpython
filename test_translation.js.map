@@ -1,1 +1,0 @@
-{"version": 3, "mappings": ";AAAAA,IAAI;AACJC,IAAI;WACJ,CAAM,CAAAD,CAAA,EAAA,CAAIC,CAAJ,CAAN", "sources": ["test_translation.py"], "names": ["a", "b"], "sourcesContent": ["a = 5\nb = 3\nprint(a + b)"]}

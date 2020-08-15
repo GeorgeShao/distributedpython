@@ -2,27 +2,37 @@ import subprocess
 import os
 
 def run(payload, function):
+	transpile_py_file = open("transpile_temp.py", "w")
+	transpile_py_file.write(payload)
+
 	try:
-		process = subprocess.Popen(['python', '-m', 'metapensiero.pj', 'test_translation.py'], 
-                                stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE,
-                                universal_newlines=True)
+		os.system('python -m metapensiero.pj transpile_temp.py')
 	except Exception as e:
 		print("Exception:", e)
+
+	placeholder_js_file.close()
+
+	transpile_js_file = open("transpile_temp.js", "r")
+	transpile_js_file_text = transpile_js_file.read()
+	payload = transpile_js_file_text
+
+	placeholder_js_file.close()
 
 	placeholder_js_file = open("./distributedpython/placeholder_events.js", "r")
 	example_js_file = open("./distributedpython/example_events.js", "r")
 	main_js_file = open("./distributedpython/events.js", "w")
+	
 	placeholder_js_text = placeholder_js_file.read()
 	placeholder_js_text = placeholder_js_text.replace("[PAYLOAD]", payload)
 	placeholder_js_text = placeholder_js_text.replace("{FUNCTION}", function)
 	main_js_file.write(placeholder_js_text)
+
 	placeholder_js_file.close()
 	example_js_file.close()
 	main_js_file.close()
 
 	try:
-		process = subprocess.Popen(['node', './distributedpython/events.js', '--scheduler=https://demo-scheduler.distributed.computer/'], 
+		run_process = subprocess.Popen(['node', './distributedpython/events.js', '--scheduler=https://demo-scheduler.distributed.computer/'], 
 									stdout=subprocess.PIPE,
 									stderr=subprocess.PIPE,
 									universal_newlines=True)
@@ -30,13 +40,13 @@ def run(payload, function):
 		print("Exception:", e)
 
 	while True:
-		output = process.stdout.readline()
+		output = run_process.stdout.readline()
 		if output.strip() != "":
 			print(output.strip())
 		# Do something else
-		return_code = process.poll()
+		return_code = run_process.poll()
 		if return_code is not None:
 			# Process has finished, read rest of the output
-			for output in process.stdout.readlines():
+			for output in run_process.stdout.readlines():
 				print(output.strip())
 			return return_code
