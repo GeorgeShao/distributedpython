@@ -1,6 +1,14 @@
 import subprocess
 import os
+
 def run(payload, function):
+	try:
+		process = subprocess.Popen(['python', '-m', 'metapensiero.pj', 'test_translation.py'], 
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.PIPE,
+                                universal_newlines=True)
+	except Exception as e:
+		print("Exception:", e)
 
 	placeholder_js_file = open("./distributedpython/placeholder_events.js", "r")
 	example_js_file = open("./distributedpython/example_events.js", "r")
