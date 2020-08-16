@@ -22,4 +22,4 @@
 5. Type ```distributedpython.run(payload, function)```.
 6. Run the file!
 
-**Code Examples:** see [distributedpython/examples](https://github.com/GeorgeShao/distributedpython/blob/master/examples)
+**Code Examples:** see [/examples](https://github.com/GeorgeShao/distributedpython/blob/master/examples)
