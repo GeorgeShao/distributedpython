@@ -21,3 +21,5 @@
 4. Type ```function = """[INSERT_YOUR_FUNCTION_HERE]"""```, replacing "[INSERT_YOUR_FUNCTION_HERE]" with your Python code that you want to deploy to DCP. Please note that the function string can be multiple lines.
 5. Type ```distributedpython.run(payload, function)```.
 6. Run the file!
+
+**Code Examples:** see [distributedpython/examples](https://github.com/GeorgeShao/distributedpython/blob/master/examples)

@@ -4,6 +4,8 @@ DistributedPython is a Python library that allows developers to run Python code 
 
 **Developer Usage:** see [DEV-USAGE.md](https://github.com/GeorgeShao/distributedpython/blob/master/DEV-USAGE.md)
 
+**Code Examples:** see [distributedpython/examples](https://github.com/GeorgeShao/distributedpython/blob/master/examples)
+
 ## Inspiration
 I was inspired to create when I was first introduced to the Distributed Compute Protocol in May 2020. I was fascinated by the thought of being able to easily deploy computationally heavy tasks to various computers on the internet that would together form a virtual supercomputer. One issue I found was that it was very easy to get started and deploy tasks in JavaScript, but many intermediate programmers who only had good knowledge of the Python programming language, weren't able to experience the power of DCP. With my project DistributedPython, I aimed to solve this problem.
 
