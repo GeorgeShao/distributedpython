@@ -8,4 +8,4 @@ def myfunction(colour):
     return colour
 """
 
-distributedpython.run(payload=payload, function=function)
+distributedpython.run(payload, function)
