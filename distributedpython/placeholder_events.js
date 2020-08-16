@@ -40,9 +40,8 @@ async function main() {
         console.log(
             `Received result (slice ${ev.sliceNumber} @ ${
                 Math.round((Date.now() - startTime) / 100) / 10
-            }s)`
+            }s) : ${ev.result}`
         );
-        console.log(`Result: ${ev.result}`);
     });
 
     job.public.name = "example project, nodejs";

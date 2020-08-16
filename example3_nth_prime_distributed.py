@@ -1,4 +1,7 @@
+import distributedpython
 
+payload = "[10, 100, 1000, 10000, 20000, 30000, 40000, 50000]"
+function = """
 def myfunction(n):
     prime_numbers = [2,3]
     i=3
@@ -15,3 +18,6 @@ def myfunction(n):
             break
     progress()
     return (f"{n}th Prime Number is: {prime_numbers[n-1]}")
+"""
+
+distributedpython.run(payload, function)

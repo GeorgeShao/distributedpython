@@ -1,3 +1,6 @@
+import time
+
+a = [10, 100, 1000, 10000, 20000, 30000, 40000, 50000]
 
 def myfunction(n):
     prime_numbers = [2,3]
@@ -10,8 +13,13 @@ def myfunction(n):
                 status = False
                 break
         if(status==True):
-            prime_numbers[len(prime_numbers)] = i
+            prime_numbers.append(i)
         if(len(prime_numbers)==n):
             break
-    progress()
-    return (f"{n}th Prime Number is: {prime_numbers[n-1]}")
+    print(f"{n}th Prime Number is: {prime_numbers[n-1]}")
+
+current = time.time()
+
+for x in a:
+    myfunction(x)
+    print(time.time() - current)

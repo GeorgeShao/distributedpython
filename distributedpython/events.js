@@ -4,10 +4,28 @@ async function main() {
 
     let job, startTime;
 
-    job = compute.for(["red", "orange", "yellow", "green", "blue", "purple"], function myfunction(colour) {
-    console.log(colour);
+    job = compute.for([10, 100, 1000, 10000, 20000, 30000, 40000, 50000], function myfunction(n) {
+    var i, prime_numbers, status;
+    prime_numbers = [2, 3];
+    i = 3;
+    while (true) {
+        i += 1;
+        status = true;
+        for (var j = 2, _pj_a = (Number.parseInt((i / 2)) + 1); (j < _pj_a); j += 1) {
+            if (((i % j) === 0)) {
+                status = false;
+                break;
+            }
+        }
+        if ((status === true)) {
+            prime_numbers[prime_numbers.length] = i;
+        }
+        if ((prime_numbers.length === n)) {
+            break;
+        }
+    }
     progress();
-    return colour;
+    return `${n}th Prime Number is: ${prime_numbers[(n - 1)]}`;
 }
 
 
@@ -21,7 +39,7 @@ async function main() {
 
     job.on("complete", function (ev) {
         console.log(
-            `Finished job, total runtime = ${
+            `Finished job, runtime = ${
                 Math.round((Date.now() - startTime) / 100) / 10
             }s`
         );
@@ -45,11 +63,10 @@ async function main() {
 
     job.on("result", function (ev) {
         console.log(
-            `Received result for slice ${ev.sliceNumber} at ${
+            `Received result (slice ${ev.sliceNumber} @ ${
                 Math.round((Date.now() - startTime) / 100) / 10
-            }s`
+            }s) : ${ev.result}`
         );
-        console.log(`Result: ${ev.result}`);
     });
 
     job.public.name = "example project, nodejs";
