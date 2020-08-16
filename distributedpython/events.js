@@ -28,6 +28,11 @@ async function main() {
   job.on('readystatechange',
          function(arg) {
            console.log(`New ready state: ${arg}`)
+           if (arg == "exec") {
+             console.log("Please enter your bank keystore password:")
+           } else if (arg == "deploying"){
+             console.log("Please enter your id keystore password:")
+           }
          })
   
   job.on('result',
