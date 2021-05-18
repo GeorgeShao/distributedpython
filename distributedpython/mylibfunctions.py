@@ -33,7 +33,7 @@ def run(payload, function):
 	main_js_file.close()
 
 	try:
-		run_process = subprocess.Popen(['node', './distributedpython/events.js', '--scheduler=https://demo-scheduler.distributed.computer/'], 
+		run_process = subprocess.Popen(['node', './distributedpython/events.js', '--scheduler=https://scheduler-v3.distributed.computer/'], 
 									stdout=subprocess.PIPE,
 									stderr=subprocess.PIPE,
 									universal_newlines=True)
